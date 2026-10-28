@@ -28,8 +28,8 @@
 <article>
 <h1>My local AI summary had valid sources. It still connected the wrong facts.</h1>
 <p class="post-meta"><time datetime="2026-10-21">2026-10-21</time><span class="chips"><span class="chip">Agents</span><span class="chip">Engineering</span></span></p>
-<p><em>Companion engineering notes for <a href="https://dev.to/tengbyte/slothpulse-i-wrote-the-code-gemma-can-draft-the-standup-2bhp">my Hacktoberfest Week 3 entry on DEV</a>. Watch the demo below, then follow the source-validation failures in more detail.</em></p>
-<p>After a day of writing code, reconstructing that day from Git commits is an unappealing second writing task. <a href="https://github.com/TengByte/slothpulse">SlothPulse</a> uses local Gemma to turn those commits and a traceback into a standup draft, with a source receipt beside each item.</p>
+<p><em>Companion engineering notes for <a href="https://dev.to/tenglidev/slothpulse-i-wrote-the-code-gemma-can-draft-the-standup-2bhp">my Hacktoberfest Week 3 entry on DEV</a>. Watch the demo below, then follow the source-validation failures in more detail.</em></p>
+<p>After a day of writing code, reconstructing that day from Git commits is an unappealing second writing task. <a href="https://github.com/tenglidev/slothpulse">SlothPulse</a> uses local Gemma to turn those commits and a traceback into a standup draft, with a source receipt beside each item.</p>
 <h2 id="demo">Watch SlothPulse in 48 seconds</h2>
 <figure class="demo-video">
   <video controls playsinline preload="none" width="1600" height="900" poster="/assets/slothpulse/poster.png" aria-label="SlothPulse recorded demo with English narration" aria-describedby="demo-caption">
@@ -39,7 +39,7 @@
   </video>
   <figcaption id="demo-caption">English narration and captions. A timestamped replay of a real local Gemma call, using synthetic commits and a captured error. The recorded inference wait plays at its actual speed.</figcaption>
 </figure>
-<p><a href="https://slothpulse.chicangel12.chatgpt.site/#replay">Explore the source receipts</a> · <a href="https://github.com/TengByte/slothpulse">Code and setup</a> · <a href="/assets/slothpulse/demo.mp4">Download the video</a></p>
+<p><a href="https://slothpulse.chicangel12.chatgpt.site/#replay">Explore the source receipts</a> · <a href="https://github.com/tenglidev/slothpulse">Code and setup</a> · <a href="/assets/slothpulse/demo.mp4">Download the video</a></p>
 <p>The first version produced a tidy developer recap. It also described an unspecified user-reported error as a failure in the recap tool itself. The output had the headings I asked for. The relationship between the facts was unsupported.</p>
 <p>I built the CLI for Hacktoberfest’s “Slow and Steady” theme. The product loop is short: preview the input, generate locally, review the Markdown. The engineering lesson was in deciding what the model was allowed to connect.</p>
 <h2>Three checks that look similar until they fail</h2>
@@ -71,18 +71,18 @@
 <p>That removes one opportunity to mix sources. It does not prevent a bad interpretation within the object. The captured Gemma output says a <code>KeyError: 'result'</code> occurs while downloading job results. The trace supports a missing dictionary key in a worker function; it does not establish the complete application behavior or root cause. The generated Markdown labels the error user-reported and its cause unverified.</p>
 <h2>A real commit exposed the remaining gap</h2>
 <p>After the synthetic benchmark, I ran SlothPulse twice on this project’s six actual commits. Both calls passed the source checks. Both summarized “Record passing Python compatibility checks and submission handoff” as “Recorded passing Python compatibility checks and submitted.” The entry was still a draft.</p>
-<p>The receipt was valid; the completion claim was wrong. An AI-assisted comparison of the six summaries to their sources identified that one status correction, which is preserved separately from the raw output. This is not a human editing-effort measurement. The <a href="https://github.com/TengByte/slothpulse/tree/main/evidence/real-repo-2026-10-21">full trial</a> took 13.619 seconds with the model initially unloaded and 8.720 seconds on the immediate repeat, before review time.</p>
+<p>The receipt was valid; the completion claim was wrong. An AI-assisted comparison of the six summaries to their sources identified that one status correction, which is preserved separately from the raw output. This is not a human editing-effort measurement. The <a href="https://github.com/tenglidev/slothpulse/tree/main/evidence/real-repo-2026-10-21">full trial</a> took 13.619 seconds with the model initially unloaded and 8.720 seconds on the immediate repeat, before review time.</p>
 <h2>Local inference also needed a concrete check</h2>
 <p>Calling <code>localhost</code> was not enough to establish the execution boundary: Ollama can expose cloud-backed models through its local API. Before sending project context, SlothPulse inspects model metadata and rejects remote or unverifiable models. The tested server runs with <code>OLLAMA_NO_CLOUD=1</code>, and the HTTP client bypasses environment proxies.</p>
 <p>The user can preview the sanitized context before inference. Common credential patterns are masked, but this is best-effort pattern matching, not a complete secret scanner. Reports and digests can still contain private project details. The trust boundary includes the local server and the person deciding where those files go.</p>
 <h2>What the measurements establish</h2>
 <p>I ran three synthetic scenarios three times each against local <code>gemma:latest</code> on an Apple M5 with 16 GB RAM. Median external process times were 7.668 seconds for five commits plus an error, 6.495 seconds for commits alone, and 3.926 seconds for an error without a repository. All nine final runs passed the documented structural and workflow checks on their first generation attempt.</p>
 <p>This small, ordered batch measures workflow behavior and latency. It does not score factual accuracy or human time savings. The unit suite separately covers 23 boundary cases, and passes on Python 3.8 and 3.14 in CI.</p>
-<p>The synthetic fixture, exact sanitized input, validated plan, terminal cast, and raw measurements are in the repository. The <a href="https://raw.githubusercontent.com/TengByte/slothpulse/main/demo-assets/demo.mp4">48-second video</a> replays a real captured call and its wait, with explanatory cards around it.</p>
+<p>The synthetic fixture, exact sanitized input, validated plan, terminal cast, and raw measurements are in the repository. The <a href="https://raw.githubusercontent.com/tenglidev/slothpulse/main/demo-assets/demo.mp4">48-second video</a> replays a real captured call and its wait, with explanatory cards around it.</p>
 <h2>What I would evaluate next</h2>
 <p>The next useful evaluation is held-out, misleading source material: ambiguous commit subjects, traces whose application is unknown, and instructions embedded in otherwise ordinary input. A human would grade whether each sentence is supported, whether uncertainty survived, and how much correction the draft needed.</p>
 <p>For this version, the gain is a shorter route from a generated sentence to the evidence it was supposed to summarize. I can point to the association the code enforces and to the interpretation it leaves for review. That distinction matters even for a small daily note.</p>
-<p><a href="https://slothpulse.chicangel12.chatgpt.site">Interactive recorded demo</a> · <a href="https://github.com/TengByte/slothpulse">Code and setup</a> · <a href="https://github.com/TengByte/slothpulse/blob/main/BENCHMARK.md">Measurements and limits</a> · <a href="https://github.com/TengByte/slothpulse/blob/main/BUILD_LOG.md">Edited build log</a></p>
+<p><a href="https://slothpulse.chicangel12.chatgpt.site">Interactive recorded demo</a> · <a href="https://github.com/tenglidev/slothpulse">Code and setup</a> · <a href="https://github.com/tenglidev/slothpulse/blob/main/BENCHMARK.md">Measurements and limits</a> · <a href="https://github.com/tenglidev/slothpulse/blob/main/BUILD_LOG.md">Edited build log</a></p>
 <hr>
 <p><em>SlothPulse is a personal project. Codex assisted with implementation, tests, demo preparation, and this draft. The application’s inference uses local Gemma. The demonstration repository and its authors are synthetic; its key-shaped value is deliberately fake.</em></p>
 <hr class="post-end">
@@ -92,8 +92,8 @@
 <footer class="site">
   <span>© 2026 Teng Li</span>
   <span class="foot-links">
-    <a href="https://github.com/TengByte">GitHub</a>
-    <a href="https://www.linkedin.com/in/teng-li-3b0007110/">LinkedIn</a>
+    <a href="https://github.com/tenglidev">GitHub</a>
+    <a href="https://www.linkedin.com/in/teng-li-dev/">LinkedIn</a>
     <a href="/feed.xml">RSS</a>
   </span>
 </footer>

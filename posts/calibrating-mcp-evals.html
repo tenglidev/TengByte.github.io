@@ -27,7 +27,7 @@
 <article>
 <h1>My eval said a perfect MCP server was broken. It was the eval that was lying.</h1>
 <p class="post-meta"><time datetime="2026-07-27">2026-07-27</time><span class="chips"><span class="chip">Agents</span><span class="chip">MCP</span><span class="chip">Engineering</span></span></p>
-<p>When I added an LLM-powered eval to <a href="https://github.com/TengByte/mcpgrade">mcpgrade</a>, the first real run produced a result that looked like a scoop: context7 — a server with a <em>perfect</em> static score — failed tool selection 62% of the time. A model shown its two-tool catalog picked the &quot;wrong&quot; tool on 5 of 8 tasks.</p>
+<p>When I added an LLM-powered eval to <a href="https://github.com/tenglidev/mcpgrade">mcpgrade</a>, the first real run produced a result that looked like a scoop: context7 — a server with a <em>perfect</em> static score — failed tool selection 62% of the time. A model shown its two-tool catalog picked the &quot;wrong&quot; tool on 5 of 8 tasks.</p>
 <p>If I had shipped that number, it would have been wrong. Not slightly wrong — systematically, unfairly wrong. This post is about how I caught it, because the failure mode generalizes to most agent benchmarks people are building right now.</p>
 <h2>The setup</h2>
 <p>mcpgrade&#39;s <code>--eval</code> mode works like this: it reads a server&#39;s tool catalog, synthesizes realistic single-step tasks (&quot;find the Slack channel where the incident was discussed&quot;), shows a model the full catalog, and measures three things — does it pick the right tool, does it fill valid arguments, and does it correctly <em>refuse</em> tasks that no tool can handle.</p>
@@ -87,8 +87,8 @@
 <p>Within a day of the launch post, a reader (<a href="https://dev.to/mads_hansen_27b33ebfee4c9/comment/3bjlc">Mads Hansen, in the dev.to comments</a>) pointed out two flaws I hadn&#39;t caught, and he&#39;s right on both.</p>
 <p>First: my outcome taxonomy is still too coarse. &quot;Refusal&quot; currently lumps together a model that <em>asks a clarifying question</em> and a model that <em>declines outright</em> — and neither is separated from the truly dangerous outcome, confidently calling a plausible-but-wrong tool. Four buckets (correct call / correct refusal / correct clarification / unsafe plausible action) with different weights is strictly better, because their production costs are wildly different.</p>
 <p>Second, and subtler: <strong>my synthetic tasks can flatter the schemas that generated them.</strong> The synthesizer reads the catalog to write tasks — so a badly-written catalog produces tasks phrased in its own bad vocabulary. The fix is held-out authoring: derive intents from real integration failures, paraphrase them through a step that never sees tool names, and freeze the test split before touching any descriptions.</p>
-<p>Both are now <a href="https://github.com/TengByte/mcpgrade/issues">tracked issues on the repo</a>. Which is the point of publishing your methodology instead of just your leaderboard: readers debug your benchmark the way they&#39;d debug your code.</p>
-<p>Full raw numbers and methodology live in the repo: <a href="https://github.com/TengByte/mcpgrade/blob/main/docs/eval-calibration.md">docs/eval-calibration.md</a>. If you build agent benchmarks and have found other systematic unfairness patterns, I want to hear about them — open an issue.</p>
+<p>Both are now <a href="https://github.com/tenglidev/mcpgrade/issues">tracked issues on the repo</a>. Which is the point of publishing your methodology instead of just your leaderboard: readers debug your benchmark the way they&#39;d debug your code.</p>
+<p>Full raw numbers and methodology live in the repo: <a href="https://github.com/tenglidev/mcpgrade/blob/main/docs/eval-calibration.md">docs/eval-calibration.md</a>. If you build agent benchmarks and have found other systematic unfairness patterns, I want to hear about them — open an issue.</p>
 <hr>
 <p><em>I build production AI agent integrations at a large tech company; mcpgrade is a personal project. The eval runs on any OpenAI-compatible endpoint — bring your own key.</em></p>
 
@@ -98,8 +98,8 @@
 <footer class="site">
   <span>© 2026 Teng Li</span>
   <span class="foot-links">
-    <a href="https://github.com/TengByte">GitHub</a>
-    <a href="https://www.linkedin.com/in/teng-li-3b0007110/">LinkedIn</a>
+    <a href="https://github.com/tenglidev">GitHub</a>
+    <a href="https://www.linkedin.com/in/teng-li-dev/">LinkedIn</a>
     <a href="/feed.xml">RSS</a>
   </span>
 </footer>

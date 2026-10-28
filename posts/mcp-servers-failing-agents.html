@@ -30,7 +30,7 @@
 <p>Your MCP server can be 100% spec-compliant and still be unusable by an agent.</p>
 <p>The Model Context Protocol spec tells you how to <em>transport</em> tools: JSON-RPC framing, capability negotiation, schema shapes. It says nothing about whether a model can actually <em>use</em> what you serve — whether it picks the right tool out of your catalog, fills the arguments correctly, or burns 8k tokens parsing your schemas on every single request.</p>
 <p>I integrate first- and third-party MCP connectors into a production AI agent for a living, and I kept seeing the same failure: servers that pass every compliance check, yet the model calls the wrong tool, hallucinates arguments, or ignores the tool entirely. The problems were never in the protocol layer. They were in the parts no one lints: descriptions, naming, schema design.</p>
-<p>So I wrote <a href="https://github.com/TengByte/mcpgrade">mcpgrade</a> — a Lighthouse-style scorecard for MCP servers. One command, no API key, report in seconds:</p>
+<p>So I wrote <a href="https://github.com/tenglidev/mcpgrade">mcpgrade</a> — a Lighthouse-style scorecard for MCP servers. One command, no API key, report in seconds:</p>
 <pre><code class="language-bash">npx mcpgrade --stdio &quot;npx -y your-mcp-server&quot;
 </code></pre>
 <p>Then I pointed it at 36 popular servers. It did not go great.</p>
@@ -52,7 +52,7 @@
 <p>Agent usability is a <em>writing</em> problem more than an engineering problem. Compliance checkers can&#39;t measure it. That&#39;s the gap mcpgrade fills.</p>
 <p>(One hopeful counterpoint: while writing this, context7 shipped a new version that fixed all its missing parameter descriptions — jumping from C to a perfect static score. The ecosystem can move fast when the gap is visible.)</p>
 <h2>Finding 4: I checked the static scores against a real model. The scary number is refusal.</h2>
-<p>Static lint is a proxy, so I built <code>--eval</code>: it synthesizes realistic single-step tasks (each embedding concrete values for every required parameter), shows a model the full catalog, and measures whether it picks the right tool and fills valid arguments. Calibration details and methodology: <a href="https://github.com/TengByte/mcpgrade/blob/main/docs/eval-calibration.md">docs/eval-calibration.md</a>. Cost: pennies per server on a small model.</p>
+<p>Static lint is a proxy, so I built <code>--eval</code>: it synthesizes realistic single-step tasks (each embedding concrete values for every required parameter), shows a model the full catalog, and measures whether it picks the right tool and fills valid arguments. Calibration details and methodology: <a href="https://github.com/tenglidev/mcpgrade/blob/main/docs/eval-calibration.md">docs/eval-calibration.md</a>. Cost: pennies per server on a small model.</p>
 <p>Two results worth your attention:</p>
 <p><strong>Static findings predict live confusion.</strong> On well-documented servers, tool-selection accuracy was 100%. On firecrawl it dropped to 84% — and the misses land <em>exactly</em> on the naming collisions static rules flag: <code>extract</code>↔<code>scrape</code>, <code>agent_status</code>↔<code>check_crawl_status</code>, <code>feedback</code>↔<code>search_feedback</code>.</p>
 <p><strong>Big fuzzy catalogs break refusal.</strong> Given deliberately out-of-scope tasks, the model correctly declined 100% of the time on small, well-documented catalogs — but only <strong>50% of the time</strong> on firecrawl&#39;s 26 fuzzy tools. Half the time it &quot;found&quot; a plausible tool and called it. In production, that&#39;s an agent doing <em>something</em> when it should do <em>nothing</em> — arguably the most dangerous failure mode there is.</p>
@@ -72,7 +72,7 @@ npx mcpgrade https://my-server.example/mcp    # streamable HTTP
 npx mcpgrade &lt;target&gt; --fail-on error         # CI gate
 npx mcpgrade &lt;target&gt; --eval                  # live model test (BYO key; any OpenAI-compatible endpoint works)
 </code></pre>
-<p>24 rules, each with a concrete fix and a rationale you&#39;re welcome to dispute in the issues — the ruleset is opinionated by design, and I&#39;d rather have the argument in public. (How this differs from mcp-lint and other MCP QA tools — with side-by-side outputs: <a href="https://github.com/TengByte/mcpgrade/blob/main/docs/comparison.md">docs/comparison.md</a>.)</p>
+<p>24 rules, each with a concrete fix and a rationale you&#39;re welcome to dispute in the issues — the ruleset is opinionated by design, and I&#39;d rather have the argument in public. (How this differs from mcp-lint and other MCP QA tools — with side-by-side outputs: <a href="https://github.com/tenglidev/mcpgrade/blob/main/docs/comparison.md">docs/comparison.md</a>.)</p>
 <p>If you maintain one of the servers above and fix your score, open a <code>rescan</code> issue — I&#39;ll happily re-run and update the table. PRs to your own servers beat arguments with my ruleset.</p>
 <hr>
 <p><em>I build production AI agent integrations at a large tech company; mcpgrade is a personal project and reflects scars from integrating dozens of MCP connectors. No affiliation with any server ranked above.</em></p>
@@ -83,8 +83,8 @@ npx mcpgrade &lt;target&gt; --eval                  # live model test (BYO key; 
 <footer class="site">
   <span>© 2026 Teng Li</span>
   <span class="foot-links">
-    <a href="https://github.com/TengByte">GitHub</a>
-    <a href="https://www.linkedin.com/in/teng-li-3b0007110/">LinkedIn</a>
+    <a href="https://github.com/tenglidev">GitHub</a>
+    <a href="https://www.linkedin.com/in/teng-li-dev/">LinkedIn</a>
     <a href="/feed.xml">RSS</a>
   </span>
 </footer>
