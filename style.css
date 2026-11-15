@@ -210,3 +210,29 @@ footer.site a:hover { color: var(--accent); }
 .project-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; font-size: 0.9rem; }
 .project-links a { text-decoration: none; }
 .project-links a:hover { text-decoration: underline; }
+
+/* Illustrated OpenWrt field notes */
+.visual-essay .article-lede { font-size: 1.22rem; line-height: 1.55; font-weight: 500; }
+.visual-essay .article-figure {
+  width: min(58rem, calc(100vw - 2.5rem));
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 1.8rem 0 2.2rem;
+}
+.article-figure picture { display: block; }
+.article-figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); }
+.article-figure figcaption { max-width: 40rem; margin: 0.7rem auto 0; color: var(--muted); font-size: 0.82rem; line-height: 1.55; }
+.figure-number { font-weight: 700; color: var(--text); margin-right: 0.35rem; }
+.visual-essay .hero-figure { margin-top: 1rem; }
+.visual-essay h2[id] { scroll-margin-top: 1.5rem; }
+.article-toc { display: flex; flex-wrap: wrap; gap: 0.55rem 1rem; padding: 1rem 0; margin: 1.6rem 0 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); font-size: 0.84rem; }
+.article-toc > span { flex-basis: 100%; color: var(--muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.article-toc a { text-decoration: none; }
+.article-toc a:hover { text-decoration: underline; }
+.evidence-table { margin: 1.5rem 0; overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+.evidence-table table { display: table; min-width: 35rem; font-size: 0.83rem; }
+.evidence-table caption { text-align: left; padding: 0.8rem; color: var(--muted); font-weight: 500; }
+.evidence-table th, .evidence-table td { padding: 0.7rem; vertical-align: top; }
+.evidence-table tbody th { background: var(--surface); }
+.evidence-table:focus-visible, .article-toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }

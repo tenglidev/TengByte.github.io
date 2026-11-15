@@ -7,14 +7,18 @@
 <meta name="description" content="A remote OpenWrt install looked like failing hardware. The faults were in cabling, routing, ARP, and a firewall—and in what I thought each check proved.">
 <meta property="og:title" content="Every Layer Lied to Me: Debugging a Remote OpenWrt Install · Teng Li">
 <meta property="og:description" content="A remote OpenWrt install looked like failing hardware. The faults were in cabling, routing, ARP, and a firewall—and in what I thought each check proved.">
-<meta property="og:image" content="https://tengli.dev/og-card.png">
+<meta property="og:image" content="https://tengli.dev/assets/every-layer-lied/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustrated laptop and OpenWrt board, with six layers to inspect during a remote install.">
 <meta property="og:type" content="article">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://tengli.dev/og-card.png">
+<meta name="twitter:image" content="https://tengli.dev/assets/every-layer-lied/cover.png">
+<meta name="twitter:image:alt" content="Every Layer Lied to Me: illustrated field notes on a remote OpenWrt install.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/style.css?v=slothpulse-demo-20261022">
+<link rel="stylesheet" href="/style.css?v=every-layer-visuals-20261114">
 <link rel="alternate" type="application/rss+xml" title="Teng Li" href="/feed.xml">
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "defe20d26eeb449a922ccc8369be85c0"}'></script>
 <link rel="canonical" href="https://tengli.dev/posts/every-layer-lied.html">
@@ -25,33 +29,49 @@
   <a class="name" href="/">Teng Li <span>· ML Engineer</span></a>
   <nav><a href="/">Home</a><a href="/writing.html">Writing</a><a href="/about.html">About</a><a href="/feed.xml">RSS</a></nav>
 </header>
-<article>
+<article class="visual-essay">
 <h1>Every Layer Lied to Me: Debugging a Remote OpenWrt Install</h1>
 <p class="post-meta"><time datetime="2026-11-14">2026-11-14</time><span class="chips"><span class="chip">Engineering</span></span></p>
-<p>I nearly blamed a perfectly good SD card for a remote OpenWrt install.</p>
+<figure class="article-figure hero-figure">
+  <img src="/assets/every-layer-lied/cover.svg" width="1200" height="675" fetchpriority="high" alt="Illustrated laptop and NanoPi R2S board, surrounded by the six troubleshooting layers: link, route, ARP, identity, state, and forwarding.">
+  <figcaption>Illustrated field notes. The diagrams below reconstruct the setup from the install notes.</figcaption>
+</figure>
+<p class="article-lede">I nearly blamed a perfectly good SD card for a remote OpenWrt install.</p>
 <p>By then I had a blinking heartbeat LED, a live Ethernet link, an admin page that appeared intermittently, and an SSH window that stayed open through a power cut. I had collected plenty of observations. I kept asking them to prove more than they could.</p>
 <p>The job was small: flash OpenWrt onto a NanoPi R2S, assign a static address, and connect it to a VPN overlay. I was working through a remote session on a macOS laptop with a direct Ethernet connection to the board.</p>
 <p>The board was fine. The interesting failures were in the path I used to reach it—and in the conclusions I drew from that path.</p>
-<h2>A live link on the wrong port</h2>
+<h2 id="setup">The setup</h2>
+<figure class="article-figure" id="management-diagram">
+  <picture>
+    <source media="(max-width: 40rem)" srcset="/assets/every-layer-lied/management-topology-mobile.svg" width="640" height="1260">
+    <img src="/assets/every-layer-lied/management-topology.svg" width="1200" height="790" loading="lazy" alt="A macOS laptop has two separate links: Wi-Fi to an existing gateway and direct USB Ethernet to the NanoPi LAN port. Both links use the example subnet 192.168.1.0/24, and both remote peers have address 192.168.1.1.">
+  </picture>
+  <figcaption><span class="figure-number">Figure 1</span> Management wiring after the cable moved to LAN. Wi-Fi and Ethernet are separate links with overlapping example addresses. The overlay-forwarding path is shown separately in Figure 2. <a href="/assets/every-layer-lied/management-topology.svg">Open full-size diagram ↗</a></figcaption>
+</figure>
+<nav class="article-toc" aria-label="In this article">
+  <span>Follow the failures</span>
+  <a href="#ports">01 · Port</a><a href="#routes">02 · Route</a><a href="#arp">03 · ARP</a><a href="#identity">04 · Identity</a><a href="#state">05 · State</a><a href="#forwarding">06 · Forwarding</a>
+</nav>
+<h2 id="ports">A live link on the wrong port</h2>
 <p>After a reflash, the cable ended up in the WAN port.</p>
 <p>In the configuration I was using, management access was on LAN. WAN expected a DHCP lease and restricted incoming traffic. On the direct cable, there was no DHCP server to provide that lease.</p>
 <p>The heartbeat LED blinked. Ethernet had carrier. The management address stayed unreachable.</p>
 <p>That combination made the board look broken because I had quietly treated “the link is up” as “the management interface is connected.” The LED had never promised that.</p>
 <p>The mistake was ordinary router muscle memory: an uplink goes into WAN. For this connection, I needed the port assigned to LAN. Checking which physical port carried the cable was more useful than another round of address guessing.</p>
-<h2>Two networks, one destination</h2>
+<h2 id="routes">Two networks, one destination</h2>
 <p>Moving the cable exposed the next problem. The laptop had Wi-Fi on the existing LAN and USB Ethernet connected to the board. Both networks used <code>192.168.1.0/24</code>.</p>
 <p>Both also contained a device at <code>192.168.1.1</code>: the existing gateway on Wi-Fi and the freshly flashed board on Ethernet.</p>
 <p>I could get an answer from <code>.1</code> and still have learned nothing about the board. Requests succeeded, then failed, while I kept describing the target as intermittent. My test machine had two possible destinations for the address I was typing.</p>
 <p>A host route toward the wired connection helped make the path explicit. Even that had a prerequisite: the board had to be powered and the link available. An earlier route-add attempt returned “Network is unreachable.”</p>
 <p>I also stopped treating an interface option as proof of egress. OpenSSH documents <a href="https://man.openbsd.org/ssh#B"><code>ssh -B</code> as binding to an interface&#x27;s address</a>. curl&#x27;s <a href="https://curl.se/docs/manpage.html#--interface"><code>--interface</code> accepts interface names or addresses</a>. Those options deserve a platform-specific reading; a successful request still needs a route and an identified peer.</p>
 <p>“Something answered” was the weakest possible success criterion for this setup.</p>
-<h2>My fixes became part of the fault</h2>
+<h2 id="arp">My fixes became part of the fault</h2>
 <p>While working on the host route, I found a permanent ARP entry mapping the board&#x27;s address to the USB adapter&#x27;s own MAC address.</p>
 <p>During cleanup, I also ended up with a proxy entry associated with Wi-Fi. Attempts to delete what looked like the offending entry kept returning “cannot locate.” I was looking at the destination address while missing the entry&#x27;s scope and type.</p>
 <p>Apple&#x27;s <a href="https://github.com/apple-oss-distributions/network_cmds/blob/main/arp.tproj/arp.8"><code>arp</code> manual distinguishes interface-scoped and published entries</a>. Multiple entries can share a destination across interfaces; deleting one does not establish that every relevant entry is gone.</p>
 <p>Once I accounted for those distinctions, I could remove the entries in the right order. Until then, each repair attempt added state I had to understand before I could interpret the next result.</p>
 <p>The laptop had become part of the incident. I was still debugging as though it were a neutral instrument.</p>
-<h2>A login page is a weak fingerprint</h2>
+<h2 id="identity">A login page is a weak fingerprint</h2>
 <p>Both the gateway and the board served admin pages. I misidentified their responses by looking at page source.</p>
 <p>My first shortcut was <code>head -c 200</code>. The board&#x27;s landing page was a redirect stub, and the useful marker appeared after the part I had kept. I had thrown away the evidence before inspecting it.</p>
 <p>Searching the full response for <code>cgi-bin/luci</code> was more useful. A diagnostic version that keeps a failed fetch visible is:</p>
@@ -59,23 +79,44 @@
   grep -c &#x27;cgi-bin/luci&#x27; /tmp/openwrt-page.html</code></pre>
 <p>That narrows the question to “does this response contain the LuCI marker?” A match helped distinguish the two pages in this setup. It does not authenticate a particular board. A zero count can mean a different page; a failed fetch needs its own diagnosis.</p>
 <p>Ping was equally easy to overread. The board did not answer the probes I tried. One apparent success reached the gateway over Wi-Fi instead. An ICMP reply established reachability to a responder. I still had to establish which responder it was, and whether the service I needed worked.</p>
-<h2>Configuration, service, session</h2>
+<h2 id="state">Configuration, service, session</h2>
 <p>Getting to the right host left several more ways to mistake recorded state for current behavior.</p>
 <p><strong>SSH was enabled in configuration but wasn&#x27;t accepting connections.</strong> Restarting the service through LuCI restored access. A refusal and a timeout were different observations: refusal indicated an explicit rejection somewhere on the path; timeout meant I had no timely answer. Neither, by itself, identified the machine or proved exactly where the failure occurred.</p>
 <p><strong>A reflash changed the SSH host key.</strong> In this setup, where two machines could occupy the same destination address, dismissing that warning would have been especially careless. OpenSSH&#x27;s <a href="https://man.openbsd.org/ssh#AUTHENTICATION">host-key check exists to detect changed identity</a>. Replacing a stale entry belongs after verifying the intended device and its new key through a trusted path.</p>
 <p><strong>An open SSH window survived a power cut.</strong> An idle connection can remain on screen until traffic, keepalives, or a timeout exposes the loss. I needed a fresh login and the board&#x27;s uptime to establish that it had rebooted. An unchanged terminal window was a poor substitute.</p>
 <p><strong>Network settings rolled back after a GUI apply.</strong> LuCI has a <a href="https://git.openwrt.org/project/luci/tree/docs/api/modules/luci.model.uci.html">confirmation-and-rollback mechanism</a>: an unconfirmed apply can revert. I had treated the submitted settings as the active settings. Applying the intended configuration through the CLI, reading it back, and then checking it after a reboot gave me a clearer record of what had persisted.</p>
 <p>Each failure had the same shape. I was using one state—configured, displayed, submitted—as evidence for another—running, connected, persisted.</p>
-<h2>Two different packet paths</h2>
+<h2 id="forwarding">Two different packet paths</h2>
 <p>The final problem appeared after the board had joined the overlay. The tunnel was active and its counters moved, but application traffic sent through it still failed.</p>
 <p>The board itself had downloaded packages and reached the overlay. That success covered traffic originating on the board. Forwarded traffic had another path through the firewall.</p>
 <p>Requests using a numeric IP failed too. That gave me a reason to look beyond DNS, although a numeric-IP failure alone could not locate the fault.</p>
+<figure class="article-figure" id="forwarding-diagram">
+  <picture>
+    <source media="(max-width: 40rem)" srcset="/assets/every-layer-lied/packet-paths-mobile.svg" width="640" height="1040">
+    <img src="/assets/every-layer-lied/packet-paths.svg" width="1200" height="760" loading="lazy" alt="Two simplified packet paths on the board. A board-originated request passes local output policy. An overlay packet crosses forwarding policy, which blocked the unassigned tunnel before a zone and forwarding rule were configured.">
+  </picture>
+  <figcaption><span class="figure-number">Figure 2</span> Simplified firewall paths. The board's successful outbound request did not exercise the overlay's forwarding rules. Green shows the working path; coral marks the earlier blocker. Masquerading and MSS settings changed in the same pass. <a href="/assets/every-layer-lied/packet-paths.svg">Open full-size diagram ↗</a></figcaption>
+</figure>
 <p>The tunnel device was outside the firewall zones I had configured, and the forwarding policy blocked the path. OpenWrt&#x27;s <a href="https://github.com/openwrt/firewall4/blob/master/root/etc/config/firewall">firewall configuration separates zone membership, forwarding, masquerading, and MTU adjustment</a>. A working tunnel does not establish permission to forward its packets.</p>
 <p>The working configuration gave the tunnel a dedicated zone, allowed the intended forwarding to LAN, and enabled masquerading and MSS clamping for the path. Restarting the firewall restored traffic.</p>
 <p>I changed those settings together, so I cannot claim this isolated an MTU problem or proved each setting necessary. The concrete configuration gap was the missing zone and forwarding path. The restored application request was the useful final check.</p>
-<h2>What the measurements actually proved</h2>
+<h2 id="takeaways">What the measurements actually proved</h2>
 <p>At the lowest point, I suspected the SD card. The faults I found were a cable in the wrong port, overlapping networks on my test machine, misleading ARP state, and a firewall path I had not configured.</p>
 <p>I had run into a related mistake when <a href="https://tengli.dev/posts/calibrating-mcp-evals.html">my agent eval marked correct behavior as failure</a>: the measurement answered a narrower question than the conclusion I attached to it.</p>
+<div class="evidence-table" tabindex="0" role="region" aria-label="Six observations and the checks each one still needed">
+<table>
+  <caption>Six signals I kept asking to prove too much</caption>
+  <thead><tr><th scope="col">Observation</th><th scope="col">What it established</th><th scope="col">Still to check</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Link light</th><td>Physical carrier</td><td>Correct management port</td></tr>
+    <tr><th scope="row">HTTP at .1</th><td>A responder</td><td>Which peer answered</td></tr>
+    <tr><th scope="row">LuCI marker</th><td>Recognizable page content</td><td>Authenticated device identity</td></tr>
+    <tr><th scope="row">Open SSH window</th><td>A client session remained</td><td>Current peer liveness</td></tr>
+    <tr><th scope="row">Submitted settings</th><td>An intended configuration</td><td>Active and persistent settings</td></tr>
+    <tr><th scope="row">Tunnel counters</th><td>Traffic at the tunnel</td><td>End-to-end forwarding</td></tr>
+  </tbody>
+</table>
+</div>
 <p>The runbook I kept from this install now asks for four things:</p>
 <ol>
 <li><strong>Establish the path.</strong> Physical port, selected route, and neighbor entry come before a hardware diagnosis.</li>

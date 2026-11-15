@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+<title id="title">One address. Two responders.</title><desc id="desc">A macOS laptop connects over Wi-Fi to a gateway and over direct USB Ethernet to the LAN port of an OpenWrt board. The separate links share the example prefix 192.168.1.0/24, and both peers use 192.168.1.1.</desc>
+<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#263b42" stroke-width="1"/></pattern></defs>
+<rect x="0" y="0" width="1200" height="790" rx="0" fill="#101f25"/>
+<rect width="1200" height="790" fill="url(#grid)" opacity=".33"/>
+<text x="64" y="56" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="600" text-anchor="start">01 / THE MANAGEMENT SETUP</text>
+<text x="64" y="108" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="43" font-weight="700" text-anchor="start">One address. Two responders.</text>
+<text x="64" y="148" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Separate links, overlapping IPv4 prefixes. Cable shown after the LAN-port correction.</text>
+<path d="M424 325 H588 V275 H760" fill="none" stroke="#92c8e7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M750 268 L760 275 L750 282" fill="none" stroke="#92c8e7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M424 435 H588 V540 H760" fill="none" stroke="#f3bc89" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M750 533 L760 540 L750 547" fill="none" stroke="#f3bc89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="478" y="212" fill="#92c8e7" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">Wi-Fi</text>
+<text x="478" y="242" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="400" text-anchor="start">192.168.1.0/24</text>
+<text x="446" y="592" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="600" text-anchor="start">USB Ethernet</text>
+<text x="446" y="623" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="400" text-anchor="start">192.168.1.0/24</text>
+<rect x="64" y="270" width="360" height="220" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
+<rect x="93" y="302" width="82.0" height="53.3" rx="6.56" fill="#223b43" stroke="#344a52" stroke-width="2"/>
+<path d="M102.84 365.14 H183.2 L175.0 355.3 H93" fill="none" stroke="#a5b9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M109.4 322.5 l8.2 6.56 l-8.2 6.56 M125.8 336.44 H147.12" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="199" y="324" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">macOS laptop</text>
+<text x="199" y="359" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" text-anchor="start">Remote session</text>
+<path d="M93 404 H392" fill="none" stroke="#344a52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="94" y="446" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Two active interfaces</text>
+<rect x="760" y="180" width="370" height="190" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
+<text x="790" y="224" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" text-anchor="start">Existing gateway</text>
+<text x="790" y="274" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34" font-weight="500" text-anchor="start">192.168.1.1</text>
+<text x="790" y="326" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" text-anchor="start">Reachable over Wi-Fi</text>
+<rect x="760" y="440" width="370" height="220" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
+<text x="790" y="483" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" text-anchor="start">NanoPi R2S</text>
+<text x="790" y="531" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34" font-weight="500" text-anchor="start">192.168.1.1</text>
+<rect x="790" y="560" width="143" height="50" rx="8" fill="#234238"/>
+<text x="861" y="591" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="middle">LAN</text>
+<rect x="950" y="560" width="146" height="50" rx="8" fill="#2a3337"/>
+<text x="1023" y="591" fill="#a5b9bf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="500" text-anchor="middle">WAN</text>
+<text x="790" y="638" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" text-anchor="start">Management on LAN</text>
+<rect x="64" y="697" width="1066" height="53" rx="10" fill="#2b3031"/>
+<text x="88" y="731" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="500" text-anchor="start">An answer from .1 does not identify which peer answered.</text>
+</svg>
