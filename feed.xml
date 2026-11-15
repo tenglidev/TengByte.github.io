@@ -4,6 +4,13 @@
   <link>https://tengli.dev</link>
   <description>Teng Li — ML Engineer</description>
   <item>
+    <title>Every Layer Lied to Me: Debugging a Remote OpenWrt Install</title>
+    <link>https://tengli.dev/posts/every-layer-lied.html</link>
+    <guid>https://tengli.dev/posts/every-layer-lied.html</guid>
+    <pubDate>Sat, 14 Nov 2026 00:00:00 -0800</pubDate>
+    <description>A remote OpenWrt install looked like failing hardware. The faults were in cabling, routing, ARP, and a firewall—and in what I thought each check proved.</description>
+  </item>
+  <item>
     <title>My local AI summary had valid sources. It still connected the wrong facts.</title>
     <link>https://tengli.dev/posts/slothpulse-source-bindings.html</link>
     <guid>https://tengli.dev/posts/slothpulse-source-bindings.html</guid>
