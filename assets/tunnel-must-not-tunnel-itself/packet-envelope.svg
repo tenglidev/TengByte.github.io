@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="445" viewBox="0 0 960 445" role="img" aria-labelledby="t d"><title id="t">A packet inside a packet</title><desc id="d">The outer packet is addressed to VPN server B. Its encrypted payload contains the original packet, still addressed to the website. Protocol details omitted.</desc>
+<rect x="0" y="0" width="960" height="445" rx="0" fill="#f5f7f2"/>
+<rect x="30" y="30" width="900" height="365" rx="10" fill="#e8f0f4" stroke="#b7cbd5" stroke-width="1.5"/>
+<text x="60" y="77" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="550" fill="#416c82" text-anchor="start">OUTER PACKET</text>
+<text x="60" y="121" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="31" font-weight="400" fill="#253b33" text-anchor="start">To: VPN server B</text>
+<rect x="60" y="157" width="840" height="208" rx="8" fill="#eaf0e4" stroke="#bdcdb6" stroke-width="1.5"/>
+<text x="85" y="198" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="550" fill="#38785e" text-anchor="start">Encrypted contents</text>
+<rect x="85" y="222" width="790" height="113" rx="6" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="110" y="262" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="550" fill="#38785e" text-anchor="start">ORIGINAL PACKET</text>
+<text x="110" y="306" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" fill="#253b33" text-anchor="start">To: the website</text>
+<text x="450" y="306" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" fill="#6b7d72" text-anchor="start">Data for the website</text>
+<text x="30" y="429" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#6b7d72" text-anchor="start">Outside: deliver to B first. Inside: the website is still the final recipient.</text>
+</svg>

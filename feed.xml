@@ -4,6 +4,13 @@
   <link>https://tengli.dev</link>
   <description>Teng Li — ML Engineer</description>
   <item>
+    <title>How Does the VPN Get Out?</title>
+    <link>https://tengli.dev/posts/tunnel-must-not-tunnel-itself.html</link>
+    <guid>https://tengli.dev/posts/tunnel-must-not-tunnel-itself.html</guid>
+    <pubDate>Sun, 15 Nov 2026 00:00:00 -0800</pubDate>
+    <description>A VPN still needs the network underneath it. Three diagrams explain packet wrapping, routing loops, and why reaching a machine does not prove it can forward traffic.</description>
+  </item>
+  <item>
     <title>Every Layer Lied to Me: Debugging a Remote OpenWrt Install</title>
     <link>https://tengli.dev/posts/every-layer-lied.html</link>
     <guid>https://tengli.dev/posts/every-layer-lied.html</guid>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="t d"><title id="t">Correct: the outer packet takes the existing network</title><desc id="d">Laptop A wraps the original packet, then routes the outer packet addressed to B over its existing network. B unwraps and forwards the original packet to the website.</desc>
+<rect x="0" y="0" width="960" height="650" rx="0" fill="#f5f7f2"/>
+<rect x="30" y="25" width="900" height="310" rx="10" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="55" y="66" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="550" fill="#6b7d72" text-anchor="start">INSIDE LAPTOP A</text>
+<rect x="55" y="100" width="220" height="100" rx="7" fill="#eaf0e4"/>
+<rect x="365" y="100" width="230" height="100" rx="7" fill="#f5f7f2"/>
+<rect x="685" y="100" width="220" height="100" rx="7" fill="#e8f0f4"/>
+<text x="165" y="141" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="27" font-weight="550" fill="#38785e" text-anchor="middle">Original packet</text>
+<text x="165" y="179" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#253b33" text-anchor="middle">To: the website</text>
+<text x="480" y="141" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="550" fill="#253b33" text-anchor="middle">VPN</text>
+<text x="480" y="179" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#6b7d72" text-anchor="middle">Encrypt + wrap</text>
+<text x="795" y="141" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="27" font-weight="550" fill="#416c82" text-anchor="middle">Outer packet</text>
+<text x="795" y="179" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#253b33" text-anchor="middle">To: B</text>
+<path d="M275 150 H365" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M356 144 L365 150 L356 156" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M595 150 H685" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M676 144 L685 150 L676 156" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M795 200 V239" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M789 230 L795 239 L801 230" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="610" y="282" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="500" fill="#416c82" text-anchor="middle">Route B outside this VPN</text>
+<path d="M795 301 V375 H130 V446" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M124 437 L130 446 L136 437" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="445" y="416" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="500" fill="#416c82" text-anchor="middle">Use the existing network path to B</text>
+<rect x="50" y="456" width="160" height="105" rx="8" fill="#e8f0f4" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="280" y="456" width="170" height="105" rx="8" fill="#e8f0f4" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="520" y="456" width="180" height="105" rx="8" fill="#eaf0e4" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="770" y="456" width="140" height="105" rx="8" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="130" y="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="28" font-weight="550" fill="#253b33" text-anchor="middle">Wi-Fi</text>
+<text x="130" y="539" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#6b7d72" text-anchor="middle">Local link</text>
+<text x="365" y="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="27" font-weight="550" fill="#253b33" text-anchor="middle">Network</text>
+<text x="365" y="539" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#6b7d72" text-anchor="middle">Router + internet</text>
+<text x="610" y="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="28" font-weight="550" fill="#253b33" text-anchor="middle">Server B</text>
+<text x="610" y="539" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="20" font-weight="400" fill="#6b7d72" text-anchor="middle">Unwrap + decrypt</text>
+<text x="840" y="500" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="550" fill="#253b33" text-anchor="middle">Website</text>
+<text x="840" y="539" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="21" font-weight="400" fill="#6b7d72" text-anchor="middle">Recipient</text>
+<path d="M210 508 H280" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M271 502 L280 508 L271 514" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M450 508 H520" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M511 502 L520 508 L511 514" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M700 508 H770" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M761 502 L770 508 L761 514" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="30" y="614" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#6b7d72" text-anchor="start">The outer packet leaves A. B unwraps it and forwards the original packet.</text>
+</svg>

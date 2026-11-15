@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="t d"><title id="t">Wrong: the outer packet goes back into the same VPN</title><desc id="d">Incorrect routing sends the new outer packet into the same VPN again. The dependency loops instead of delivering the transport packet to B.</desc>
+<rect x="0" y="0" width="960" height="440" rx="0" fill="#f5f7f2"/>
+<rect x="30" y="150" width="235" height="110" rx="8" fill="#eaf0e4" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="365" y="150" width="230" height="110" rx="8" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="690" y="150" width="240" height="110" rx="8" fill="#e8f0f4" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="147" y="195" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="27" font-weight="550" fill="#38785e" text-anchor="middle">Original packet</text>
+<text x="147" y="233" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#253b33" text-anchor="middle">To: the website</text>
+<text x="480" y="195" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="30" font-weight="550" fill="#253b33" text-anchor="middle">VPN</text>
+<text x="480" y="233" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#6b7d72" text-anchor="middle">Encrypt + wrap</text>
+<text x="810" y="195" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="550" fill="#416c82" text-anchor="middle">New outer packet</text>
+<text x="810" y="233" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#253b33" text-anchor="middle">To: B</text>
+<path d="M265 205 H365" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M356 199 L365 205 L356 211" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M595 205 H690" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M681 199 L690 205 L681 211" fill="none" stroke="#416c82" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M810 150 V78 H480 V150" fill="none" stroke="#b44f41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M474 141 L480 150 L486 141" fill="none" stroke="#b44f41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="650" y="53" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="500" fill="#b44f41" text-anchor="middle">Wrong route: back into the VPN</text>
+<text x="480" y="330" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="500" fill="#b44f41" text-anchor="middle">Wrap again → route again → repeat</text>
+<text x="480" y="396" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#6b7d72" text-anchor="middle">The letter stays at the wrapping desk instead of reaching B.</text>
+</svg>
