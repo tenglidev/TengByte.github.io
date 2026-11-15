@@ -1,55 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
-<title id="title">Every Layer Lied to Me</title><desc id="desc">Illustrated cover showing a laptop, an OpenWrt board, and six layers to inspect during troubleshooting.</desc>
-<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#263b42" stroke-width="1"/></pattern></defs>
-<rect x="0" y="0" width="1200" height="675" rx="0" fill="#101f25"/>
-<rect width="1200" height="675" fill="url(#grid)" opacity=".33"/>
-<text x="60" y="62" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="600" text-anchor="start">FIELD NOTES / OPENWRT</text>
-<text x="60" y="171" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="78" font-weight="700" text-anchor="start">Every layer</text>
-<text x="60" y="255" fill="#b4e5c6" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="78" font-weight="700" text-anchor="start">lied to me.</text>
-<text x="64" y="314" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">A remote install.</text>
-<text x="64" y="355" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="400" text-anchor="start">Six misleading signals.</text>
-<rect x="770" y="130" width="225.0" height="146.25" rx="18.0" fill="#223b43" stroke="#344a52" stroke-width="2"/>
-<path d="M797.0 303.25 H1017.5 L995.0 276.25 H770" fill="none" stroke="#a5b9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M815.0 186.25 l22.5 18.0 l-22.5 18.0 M860.0 224.5 H918.5" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="760" y="400" width="335" height="155" rx="20" fill="#284139" stroke="#536b58" stroke-width="2"/>
-<text x="783" y="437" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" font-weight="600" text-anchor="start">NanoPi R2S / OpenWrt</text>
-<rect x="790" y="461" width="109" height="52" rx="8" fill="#101f25" stroke="#708681" stroke-width="2"/>
-<path d="M803 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M817 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M831 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M845 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M859 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M873 465 V475" fill="none" stroke="#b4e5c6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="844" y="540" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="600" text-anchor="middle">LAN</text>
-<rect x="955" y="461" width="109" height="52" rx="8" fill="#101f25" stroke="#708681" stroke-width="2"/>
-<path d="M968 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M982 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M996 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1010 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1024 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1038 465 V475" fill="none" stroke="#f3bc89" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="1009" y="540" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="600" text-anchor="middle">WAN</text>
-<circle cx="1063" cy="428" r="6" fill="#b4e5c6"/>
-<path d="M 990 303 V350 H846 V400" fill="none" stroke="#b4e5c6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M 1009 461 H1133 V99 H1069" fill="none" stroke="#f3bc89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="7 9"/>
-<path d="M1126 343 L1140 357 M1140 343 L1126 357" fill="none" stroke="#f38e7e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="64" y="480" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="500" text-anchor="start">Which path did I actually test?</text>
-<rect x="60" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="77" cy="606" r="4" fill="#92c8e7"/>
-<text x="91" y="612" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">LINK</text>
-<rect x="243" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="260" cy="606" r="4" fill="#f3bc89"/>
-<text x="274" y="612" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">ROUTE</text>
-<rect x="426" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="443" cy="606" r="4" fill="#b4e5c6"/>
-<text x="457" y="612" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">ARP</text>
-<rect x="609" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="626" cy="606" r="4" fill="#92c8e7"/>
-<text x="640" y="612" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">IDENTITY</text>
-<rect x="792" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="809" cy="606" r="4" fill="#f3bc89"/>
-<text x="823" y="612" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">STATE</text>
-<rect x="975" y="584" width="167" height="45" rx="8" fill="#182c33" stroke="#344a52" stroke-width="2"/>
-<circle cx="992" cy="606" r="4" fill="#b4e5c6"/>
-<text x="1006" y="612" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="500" text-anchor="start">FORWARD</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d"><title id="t">Every Layer Lied to Me</title><desc id="d">Social preview for field notes on debugging a remote OpenWrt installation.</desc>
+<rect x="0" y="0" width="1200" height="630" rx="0" fill="#f5f7f2"/>
+<text x="70" y="75" font-family="ui-monospace, Menlo, monospace" font-size="21" font-weight="600" fill="#38785e" text-anchor="start">ENGINEERING FIELD NOTES</text>
+<text x="70" y="195" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="82" font-weight="650" fill="#253b33" text-anchor="start">Every Layer</text>
+<text x="70" y="285" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="82" font-weight="650" fill="#38785e" text-anchor="start">Lied to Me</text>
+<text x="74" y="370" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="30" font-weight="400" fill="#6b7d72" text-anchor="start">Debugging a remote OpenWrt install</text>
+<rect x="816" y="189" width="170.0" height="108.8" rx="5" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<path d="M850.0 226.4 l17.0 15.299999999999999 l-17.0 15.299999999999999 M889.1 260.4 h37.4" fill="none" stroke="#38785e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M799.0 314.8 H1003.0 L986.0 297.8 H816 Z" fill="none" stroke="#253b33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M901 318 V394 H831 V427" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="785" y="427" width="240" height="106" rx="9" fill="#e9f0e5" stroke="#bccdbb" stroke-width="1.5"/>
+<rect x="810" y="454" width="69" height="46" rx="5" fill="#fff" stroke="#bccdbb" stroke-width="1.5"/>
+<rect x="931" y="454" width="69" height="46" rx="5" fill="#fff" stroke="#bccdbb" stroke-width="1.5"/>
+<text x="74" y="550" font-family="ui-monospace, Menlo, monospace" font-size="21" font-weight="400" fill="#6b7d72" text-anchor="start">Cabling / routing / ARP / identity / state / forwarding</text>
 </svg>

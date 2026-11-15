@@ -1,46 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1040" viewBox="0 0 640 1040" role="img" aria-labelledby="title desc">
-<title id="title">Two different packet paths</title><desc id="desc">Mobile layout comparing board-originated output with traffic forwarded from a tunnel through zone and forwarding policy to LAN.</desc>
-<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#263b42" stroke-width="1"/></pattern></defs>
-<rect x="0" y="0" width="640" height="1040" rx="0" fill="#101f25"/>
-<rect width="640" height="1040" fill="url(#grid)" opacity=".33"/>
-<text x="48" y="56" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="600" text-anchor="start">02 / PACKET PATHS</text>
-<text x="48" y="111" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Same board.</text>
-<text x="48" y="162" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="38" font-weight="700" text-anchor="start">Different packet paths.</text>
-<rect x="48" y="207" width="544" height="274" rx="16" fill="#192b32" stroke="#344a52" stroke-width="2"/>
-<text x="76" y="255" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="start">BOARD’S OWN REQUEST</text>
-<rect x="76" y="289" width="144" height="106" rx="10" fill="#223b42"/>
-<text x="148.0" y="331" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="600" text-anchor="middle">Board</text>
-<text x="148.0" y="370" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">request</text>
-<rect x="246" y="289" width="145" height="106" rx="10" fill="#223b42"/>
-<text x="318.5" y="331" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="600" text-anchor="middle">OUTPUT</text>
-<text x="318.5" y="370" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">policy</text>
-<rect x="417" y="289" width="147" height="106" rx="10" fill="#223b42"/>
-<text x="490.5" y="331" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="600" text-anchor="middle">LAN</text>
-<text x="490.5" y="370" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">egress</text>
-<path d="M220 342 H246" fill="none" stroke="#b4e5c6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M236 335 L246 342 L236 349" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M391 342 H417" fill="none" stroke="#b4e5c6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M407 335 L417 342 L407 349" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="76" y="444" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" text-anchor="start">Package request succeeds.</text>
-<rect x="48" y="523" width="544" height="373" rx="16" fill="#192b32" stroke="#79604b" stroke-width="2"/>
-<text x="76" y="572" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="start">FORWARDED TRAFFIC</text>
-<rect x="76" y="607" width="144" height="106" rx="10" fill="#223b42"/>
-<text x="148.0" y="649" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="middle">Tunnel</text>
-<text x="148.0" y="688" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">ingress</text>
-<rect x="246" y="607" width="145" height="106" rx="10" fill="#223b42"/>
-<text x="318.5" y="649" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="middle">FORWARD</text>
-<text x="318.5" y="688" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">policy</text>
-<rect x="417" y="607" width="147" height="106" rx="10" fill="#223b42"/>
-<text x="490.5" y="649" fill="#eef5f3" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="600" text-anchor="middle">LAN</text>
-<text x="490.5" y="688" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="middle">egress</text>
-<path d="M220 660 H246" fill="none" stroke="#92c8e7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M236 653 L246 660 L236 667" fill="none" stroke="#92c8e7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M391 660 H417" fill="none" stroke="#b4e5c6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M407 653 L417 660 L407 667" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<circle cx="84" cy="762" r="5" fill="#f38e7e"/>
-<text x="103" y="771" fill="#f38e7e" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" text-anchor="start">Before: tunnel had no zone.</text>
-<circle cx="84" cy="819" r="5" fill="#b4e5c6"/>
-<text x="103" y="828" fill="#b4e5c6" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" text-anchor="start">After: zone + forwarding rule.</text>
-<text x="48" y="950" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" text-anchor="start">Masquerading and MSS settings</text>
-<text x="48" y="985" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">changed in the same configuration pass.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 780" width="640" height="780" role="img" aria-labelledby="t d"><title id="t">Two packet paths</title><desc id="d">Mobile comparison of local output policy and forwarding policy, with zone membership and explicit forwarding as part of the working configuration.</desc>
+<rect x="0" y="0" width="640" height="780" rx="0" fill="#f5f7f2"/>
+<text x="34" y="48" font-family="ui-monospace, Menlo, monospace" font-size="23" font-weight="600" fill="#38785e" text-anchor="start">LOCALLY GENERATED</text>
+<text x="34" y="373" font-family="ui-monospace, Menlo, monospace" font-size="23" font-weight="600" fill="#a96937" text-anchor="start">FORWARDED FROM OVERLAY</text>
+<rect x="34" y="91" width="167" height="116" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="117.5" y="139" font-family="ui-monospace, Menlo, monospace" font-size="26" font-weight="600" fill="#253b33" text-anchor="middle">Board</text>
+<text x="117.5" y="180" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">request</text>
+<rect x="235" y="91" width="169" height="116" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="319.5" y="139" font-family="ui-monospace, Menlo, monospace" font-size="26" font-weight="600" fill="#253b33" text-anchor="middle">OUTPUT</text>
+<text x="319.5" y="180" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">policy</text>
+<rect x="438" y="91" width="168" height="116" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="522.0" y="139" font-family="ui-monospace, Menlo, monospace" font-size="26" font-weight="600" fill="#253b33" text-anchor="middle">LAN</text>
+<text x="522.0" y="180" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">egress</text>
+<path d="M201 150 H235" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M227 145 L235 150 L227 155" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M404 150 H438" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M430 145 L438 150 L430 155" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="34" y="261" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="400" fill="#6b7d72" text-anchor="start">Package request succeeds.</text>
+<rect x="34" y="418" width="167" height="116" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="117.5" y="466" font-family="ui-monospace, Menlo, monospace" font-size="25" font-weight="600" fill="#253b33" text-anchor="middle">Tunnel</text>
+<text x="117.5" y="507" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">ingress</text>
+<rect x="235" y="418" width="169" height="116" rx="7" fill="#fff8ee" stroke="#dcc9ae" stroke-width="1.5"/>
+<text x="319.5" y="466" font-family="ui-monospace, Menlo, monospace" font-size="25" font-weight="600" fill="#253b33" text-anchor="middle">FORWARD</text>
+<text x="319.5" y="507" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">policy</text>
+<rect x="438" y="418" width="168" height="116" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="522.0" y="466" font-family="ui-monospace, Menlo, monospace" font-size="25" font-weight="600" fill="#253b33" text-anchor="middle">LAN</text>
+<text x="522.0" y="507" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="middle">egress</text>
+<path d="M201 477 H235" fill="none" stroke="#5b8590" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M227 472 L235 477 L227 482" fill="none" stroke="#5b8590" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M404 477 H438" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M430 472 L438 477 L430 482" fill="none" stroke="#38785e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="41" cy="589" r="4" fill="#b55d49"/>
+<text x="59" y="598" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#b55d49" text-anchor="start">Before: tunnel had no zone.</text>
+<circle cx="41" cy="642" r="4" fill="#38785e"/>
+<text x="59" y="651" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#38785e" text-anchor="start">After: zone + forwarding rule.</text>
+<text x="34" y="718" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="start">Masquerading and MSS settings</text>
+<text x="34" y="754" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#6b7d72" text-anchor="start">changed in the same pass.</text>
 </svg>

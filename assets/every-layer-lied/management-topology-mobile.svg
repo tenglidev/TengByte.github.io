@@ -1,37 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="1260" viewBox="0 0 640 1260" role="img" aria-labelledby="title desc">
-<title id="title">One address. Two responders.</title><desc id="desc">Mobile layout of the management topology. A laptop uses Wi-Fi to a gateway and direct Ethernet to an OpenWrt LAN port, with the same example subnet and peer address on both links.</desc>
-<defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M 32 0 L 0 0 0 32" fill="none" stroke="#263b42" stroke-width="1"/></pattern></defs>
-<rect x="0" y="0" width="640" height="1260" rx="0" fill="#101f25"/>
-<rect width="640" height="1260" fill="url(#grid)" opacity=".33"/>
-<text x="48" y="58" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="600" text-anchor="start">01 / MANAGEMENT SETUP</text>
-<text x="48" y="114" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">One address.</text>
-<text x="48" y="165" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="42" font-weight="700" text-anchor="start">Two responders.</text>
-<path d="M350 410 V523" fill="none" stroke="#92c8e7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M492 410 H607 V944 H568" fill="none" stroke="#f3bc89" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M578 937 L568 944 L578 951" fill="none" stroke="#f3bc89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="48" y="464" fill="#92c8e7" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="600" text-anchor="start">Wi-Fi</text>
-<text x="48" y="499" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="400" text-anchor="start">192.168.1.0/24</text>
-<text x="48" y="770" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" text-anchor="start">USB Ethernet / direct cable</text>
-<text x="48" y="807" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="400" text-anchor="start">192.168.1.0/24</text>
-<rect x="48" y="220" width="520" height="190" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
-<rect x="80" y="252" width="100" height="65" rx="8" fill="#223b43" stroke="#344a52" stroke-width="2"/>
-<path d="M92 329 H190 L180 317 H80" fill="none" stroke="#a5b9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M100 277 l10 8 l-10 8 M120 294 H146" fill="none" stroke="#b4e5c6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="220" y="285" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" text-anchor="start">macOS laptop</text>
-<text x="220" y="329" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" text-anchor="start">Remote session</text>
-<text x="220" y="373" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="22" font-weight="400" text-anchor="start">Wi-Fi + USB Ethernet</text>
-<rect x="48" y="523" width="520" height="190" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
-<text x="80" y="572" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" text-anchor="start">Existing gateway</text>
-<text x="80" y="625" fill="#92c8e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="36" font-weight="500" text-anchor="start">192.168.1.1</text>
-<text x="80" y="674" fill="#a5b9bf" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" text-anchor="start">Reachable over Wi-Fi</text>
-<rect x="48" y="850" width="520" height="230" rx="18" fill="#192b32" stroke="#344a52" stroke-width="2"/>
-<text x="80" y="900" fill="#eef5f3" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" text-anchor="start">NanoPi R2S</text>
-<text x="80" y="953" fill="#f3bc89" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="36" font-weight="500" text-anchor="start">192.168.1.1</text>
-<rect x="80" y="981" width="206" height="59" rx="9" fill="#234238"/>
-<text x="183" y="1019" fill="#b4e5c6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="600" text-anchor="middle">LAN / used</text>
-<rect x="305" y="981" width="228" height="59" rx="9" fill="#2a3337"/>
-<text x="419" y="1019" fill="#a5b9bf" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="23" font-weight="500" text-anchor="middle">WAN / unused</text>
-<rect x="48" y="1122" width="520" height="94" rx="12" fill="#2b3031"/>
-<text x="74" y="1160" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="500" text-anchor="start">Same address string.</text>
-<text x="74" y="1196" fill="#f3bc89" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="26" font-weight="500" text-anchor="start">Two possible responders.</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 810" width="640" height="810" role="img" aria-labelledby="t d"><title id="t">Management wiring</title><desc id="d">Mobile layout: a laptop reaches two different peers with the same example IP address through separate Wi-Fi and Ethernet links.</desc>
+<rect x="0" y="0" width="640" height="810" rx="0" fill="#f5f7f2"/>
+<path d="M276 190 V303" fill="none" stroke="#5b8590" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M480 190 H605 V635 H550" fill="none" stroke="#a96937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="40" y="245" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#5b8590" text-anchor="start">Wi-Fi</text>
+<text x="40" y="280" font-family="ui-monospace, Menlo, monospace" font-size="23" font-weight="400" fill="#5b8590" text-anchor="start">192.168.1.0/24</text>
+<text x="40" y="514" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="25" font-weight="600" fill="#a96937" text-anchor="start">USB Ethernet</text>
+<text x="40" y="550" font-family="ui-monospace, Menlo, monospace" font-size="23" font-weight="400" fill="#a96937" text-anchor="start">192.168.1.0/24</text>
+<rect x="100" y="35" width="450" height="155" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<rect x="125" y="69" width="92.0" height="58.88" rx="5" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<path d="M143.4 89.24000000000001 l9.200000000000001 8.280000000000001 l-9.200000000000001 8.280000000000001 M164.56 107.64 h20.240000000000002" fill="none" stroke="#38785e" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M115.8 137.07999999999998 H226.2 L217.0 127.88 H125 Z" fill="none" stroke="#253b33" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="254" y="94" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="600" fill="#253b33" text-anchor="start">macOS laptop</text>
+<text x="254" y="139" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#6b7d72" text-anchor="start">Remote session</text>
+<rect x="40" y="303" width="510" height="184" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="67" y="350" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="600" fill="#253b33" text-anchor="start">Existing gateway</text>
+<text x="67" y="403" font-family="ui-monospace, Menlo, monospace" font-size="36" font-weight="500" fill="#5b8590" text-anchor="start">192.168.1.1</text>
+<text x="67" y="452" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#6b7d72" text-anchor="start">Wi-Fi peer</text>
+<rect x="40" y="580" width="510" height="184" rx="7" fill="#fff" stroke="#d9e1d9" stroke-width="1.5"/>
+<text x="67" y="627" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="29" font-weight="600" fill="#253b33" text-anchor="start">NanoPi R2S</text>
+<text x="67" y="680" font-family="ui-monospace, Menlo, monospace" font-size="36" font-weight="500" fill="#a96937" text-anchor="start">192.168.1.1</text>
+<text x="67" y="729" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#6b7d72" text-anchor="start">LAN port / management</text>
 </svg>
